@@ -1,0 +1,203 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Anta&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+/* color logo #004AAD  azul marino 
+    color tema oscuro #545454 gris
+    #ffffff80 gris nav*/
+
+* {
+    box-sizing: border-box;  /* the padding will not increase size of the div  */
+}
+
+body { /* Estilos para el modo claro */
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #ffffff;
+    color: #000;;
+    margin: 100px;
+}
+
+body.mode-oscuro { /* Estilos para el modo claro */
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #000;
+    color: #ffffff;
+  }
+
+/* Estilo para el modo claro del boton*/
+.modo-claro {
+    background-color: #000; 
+    color: #ffffff; 
+  }
+  
+  /* Estilo para el modo oscuro del boton*/
+.modo-oscuro {
+    background-color: #ffffff; 
+    color: #000000; 
+    
+  }
+
+.en { display: none; /* Oculta el contenido en inglés por defecto */
+
+}
+
+
+/* ==============================
+=======BARRA DE NAVEGACION=======
+============================== */
+
+.barra-navegacion {
+    background-color: #ffffff80; /* Fondo transparente con opacidad del 50% */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos dentro de la barra de navegación */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 0px; /* Espaciado interno */
+    box-sizing: border-box; /* Ajustar el tamaño total incluyendo el relleno */
+    z-index: 999; /* Asegurar que esté por encima de otros elementos */
+}
+
+
+.barra-navegacion li {
+    display: inline-block; /* Mostrar los elementos de la lista en línea */
+    margin-right: 20px; /* Espacio entre las opciones */
+    height: 0px; /* Reducir la altura de los elementos de la lista */
+}
+
+
+
+.barra-navegacion li a,
+.barra-navegacion li button {
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    color: #000; /* Color del texto */
+    padding: 5px 8px; /* Espacio interno de los enlaces */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.barra-navegacion li a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo al pasar el cursor */
+}
+
+#boton-lenguaje {
+    border: none; /* Elimina el borde */
+    background-color: transparent; /* Establece el fondo transparente */
+    padding: 0; /* Elimina el relleno */
+    cursor: pointer; /* Cambia el cursor a un puntero */
+    position: fixed; /* Fija el botón de lenguaje en la pantalla */
+    top: 10px; /* Distancia desde la parte superior de la ventana */
+    right: 250px; /* Distancia desde el borde derecho de la ventana */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+} 
+
+.imagenIconoLenguaje {
+    width: 40px; /* Tamaño deseado para el icono */
+}
+
+
+nav li:first-child {
+    font-weight: bolder;
+}
+
+/* interruptor deslizante (toggle switch) */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; /* Ajusta la altura del punto de control */
+  width: 16px; /* Ajusta el ancho del punto de control */
+  left: 2px; /* Ajusta el desplazamiento horizontal del punto de control */
+  bottom: 2px; /* Ajusta el desplazamiento vertical del punto de control */
+  background-color: #ffffff;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color:  rgba(255, 255, 255, 0.5);
+}
+
+/* ==============================
+===========CONTENIDO==========
+============================== */
+
+.contenedor--h1 {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos al extremo izquierdo y derecho */
+    margin: 100px;
+}
+
+.h1--parrafoInicio {
+    box-sizing: border-box; 
+    width: 45%; /* Ancho deseado de la caja */
+    height: auto; /* Altura automática según el contenido */
+    padding: 0px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+    line-height: 1.5; /* Altura de línea para el espaciado entre líneas */
+}
+
+.animacion--titulo {
+    width: 50%; /* Ancho deseado para la animación */
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-top: -150px; /* Sube la animación 20px por encima del título */
+}
+
+.a--inicioRapido {
+    padding: 10px 20px; /* Ajustar el relleno para que se vea como un botón */
+    text-decoration: none; /* Quitar subrayado predeterminado */
+    background-color: #004AAD; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: 1px solid #004AAD; /* Borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.a--inicioRapido:hover {
+    background-color: #115eb1; /* Cambiar el color de fondo al pasar el cursor */
+    color: #ffffff; /* Cambiar el color del texto al pasar el cursor */
+}
+
+/* Estilos para el modo oscuro */
+body.mode-oscuro .a--inicioRapido {
+    background-color: #ffffff80; /* Cambiar el color de fondo en modo oscuro */
+    border-color: #ffffff80; /* Cambiar el color del borde en modo oscuro */
+    color: #ffffff; /* Cambiar el color del texto en modo oscuro */
+  }
+  
+  

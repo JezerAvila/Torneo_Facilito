@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourneo Facilito</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+  <nav class="barra-navegacion">
+    <ul>
+        <li>
+          <a href="#" class="es">Torneo Facilito</a>
+          <a href="#" class="en">Easy Tournament</a>
+        </li>
+        <li>
+          <a href="#" class="es">Inicio</a>
+          <a href="#" class="en">Home</a>
+        </li>
+        <li>
+          <a href="#" class="es">Sobre nosotros</a>
+          <a href="#" class="en">About us</a>
+        </li>
+        <li>
+          <a href="#" class="es">Crear sesión</a>
+          <a href="#" class="en">Sign in</a>
+        </li>
+        <li>
+          <a href="#" class="es">Iniciar sesión</a>
+          <a href="#" class="en">Log in</a>
+        </li>
+        <li>
+          <label class="switch" for="switchModo">
+            <input type="checkbox" id="switchModo" onchange="ModoOscuro()">
+            <span class="slider"></span>
+          </label>
+        </li>
+        <li>
+          <button onclick="CambiarIdioma()" id="boton-lenguaje" class="modo-claro"><img class="imagenIconoLenguaje" src="images/icono-lenguaje-claro.png" alt="boton de lenguaje"></button>
+        </li>
+    </ul>
+  </nav>
+
+<div class="contenedor--h1">
+  <h1 class="es h1--parrafoInicio">
+  Crea y organiza torneos de forma rápida y gratuita <br> <br>
+  <a href="formuilario.html" class="a--inicioRapido">Inicio Rapido</a>
+  </h1>
+  <h1 class="en h1--parrafoInicio">
+  Create and organize tournaments quickly and for free <br> <br>
+  <a href="formuilario.html" class="a--inicioRapido">Quick start</a>
+  </h1>
+
+  <video id="animacionLogo" class="animacion--titulo" autoplay loop muted>
+    <source id="animacionLogoRuta" src="animaciones/TorneClaro.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- <a href="formuilario.html">
+  <button class="es boton--inicioRapido">Inicio Rapido</button>
+  <button class="en boton--inicioRapido">Quick start</button>
+</a> -->
+
+<br><br><br><br>
+
+<p class="es">Despues de un registro rapido, el sistema: <br>
+  Generara partidas aleatorias <br>
+  Clasificara jugadores por victorias o puntaje <br>
+  Notificandoles los resultados ademas de los datos de su siguiente partida via sms </p>
+<p class="en">After a quick registration, the system will: <br>
+  Generate random matches <br>
+  Rank players by wins or score <br>
+  Send notifications of the results in addition to the data of their next game via SMS </p>
+  
+<video id="animacionGaming" autoplay loop muted>
+  <source id="animacionGamingRuta" src="animaciones/gamingClaro.mp4" type="video/mp4">
+</video>
+
+</body>
+</html>
