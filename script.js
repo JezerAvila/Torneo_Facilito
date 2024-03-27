@@ -1,3 +1,7 @@
+/* ============================
+      Tema claro/obscuro 
+===============================*/
+
 function ModoOscuro() {
     var body = document.body;
     var switchModo = document.getElementById("switchModo");
@@ -25,7 +29,9 @@ function ModoOscuro() {
     animacionGaming.play(); // Reproducir el nuevo video
 }
 
-  
+  /* ============================
+        cambio de idioma 
+===============================*/
 
   function CambiarIdioma() {
     var botonIdioma = document.getElementById('boton-lenguaje');
@@ -51,4 +57,15 @@ function ModoOscuro() {
     }
   }
 
-  
+/* ============================
+barra de navegacion desplegable 
+===============================*/
+
+  function toggleMenu() {
+    var menu = document.getElementById("nav--menuDesplegable");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }

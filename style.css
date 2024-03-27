@@ -44,7 +44,6 @@ body.mode-oscuro { /* Estilos para el modo claro */
 
 }
 
-
 /* ==============================
 =======BARRA DE NAVEGACION=======
 ============================== */
@@ -55,7 +54,8 @@ body.mode-oscuro { /* Estilos para el modo claro */
     list-style-type: none; /* Eliminar los puntos de la lista */
 
     display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos dentro de la barra de navegación */
+    justify-content:flex-start; /* Centra horizontalmente los elementos dentro de la barra de navegación */
+    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
@@ -68,7 +68,7 @@ body.mode-oscuro { /* Estilos para el modo claro */
 
 .barra-navegacion li {
     display: inline-block; /* Mostrar los elementos de la lista en línea */
-    margin-right: 20px; /* Espacio entre las opciones */
+    margin-right:auto; /* Espacio entre las opciones */
     height: 0px; /* Reducir la altura de los elementos de la lista */
 }
 
@@ -94,14 +94,13 @@ body.mode-oscuro { /* Estilos para el modo claro */
     cursor: pointer; /* Cambia el cursor a un puntero */
     position: fixed; /* Fija el botón de lenguaje en la pantalla */
     top: 10px; /* Distancia desde la parte superior de la ventana */
-    right: 250px; /* Distancia desde el borde derecho de la ventana */
+    right: 150px; /* Distancia desde el borde derecho de la ventana */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 } 
 
 .imagenIconoLenguaje {
     width: 40px; /* Tamaño deseado para el icono */
 }
-
 
 nav li:first-child {
     font-weight: bolder;
@@ -114,6 +113,10 @@ nav li:first-child {
   display: inline-block;
   width: 40px;
   height: 20px;
+  position: fixed; /* Fija el botón de lenguaje en la pantalla */
+  top: 17px; /* Distancia desde la parte superior de la ventana */
+  right: 200px; /* Distancia desde el borde derecho de la ventana */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .switch input {
@@ -153,29 +156,97 @@ input:checked + .slider:before {
   background-color:  rgba(255, 255, 255, 0.5);
 }
 
+
+/* ================================
+==BARRA DE NAVEGACION DESPLEGABLE==
+================================ */
+
+.div--menuDesplegable img {
+  width: 50px; /* Tamaño deseado para el icono */
+  border: none; /* Elimina el borde */
+  background-color: transparent; /* Establece el fondo transparente */
+  padding: 0; /* Elimina el relleno */
+  cursor: pointer; /* Cambia el cursor a un puntero */
+  position: fixed; /* Fija el botón de lenguaje en la pantalla */
+  top: 10px; /* Distancia desde la parte superior de la ventana */
+  right: 10px; /* Distancia desde el borde derecho de la ventana */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.div--menuDesplegable {
+  cursor: pointer;
+}
+
+.nav--menuDesplegable {
+  display: none;
+  position: absolute;
+  top: 50px; /* Ajusta la posición vertical según tu diseño */
+  right: 20px; /* Ajusta la posición horizontal según tu diseño */
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav--menuDesplegable ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav--menuDesplegable li {
+  margin-bottom: 10px;
+}
+
+.nav--menuDesplegable a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav--menuDesplegable a:hover {
+  color: #666;
+}
+
+
+/* Media query para ajustar el diseño en pantallas pequeñas */
+.div--menuDesplegable {
+    display: none; /* Oculta el contenedor del botón de menú desplegable por defecto */
+}
+
+@media only screen and (max-width: 830px) {
+  .barra-navegacion {
+    display: none; /* Muestra el contenedor del botón de menú desplegable */
+  }
+
+  .div--menuDesplegable {
+      display: block; /* Muestra el contenedor del botón de menú desplegable */
+  }
+}
+
 /* ==============================
 ===========CONTENIDO==========
 ============================== */
 
 .contenedor--h1 {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos al extremo izquierdo y derecho */
-    margin: 100px;
+    justify-content: center; /* Distribuye los elementos al extremo izquierdo y derecho */
+    flex-grow: 1; /* Para que el contenido se adapte al espacio disponible */
+    flex-wrap: wrap;
+    align-items: center; /* Centrar verticalmente */
 }
 
 .h1--parrafoInicio {
-    box-sizing: border-box; 
-    width: 45%; /* Ancho deseado de la caja */
-    height: auto; /* Altura automática según el contenido */
-    padding: 0px; /* Espaciado interno */
-    text-align: left; /* Alineación del texto a la izquierda */
-    line-height: 1.5; /* Altura de línea para el espaciado entre líneas */
+    color:#004AAD;
+    width: 50%;
+    padding: 60px;
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
 .animacion--titulo {
-    width: 50%; /* Ancho deseado para la animación */
+    width: 30%; /* Ancho deseado para la animación */
     text-align: right; /* Alinea el texto a la derecha */
-    margin-top: -150px; /* Sube la animación 20px por encima del título */
+    /*margin-top: -150px;  Sube la animación 20px por encima del título */
 }
 
 .a--inicioRapido {
