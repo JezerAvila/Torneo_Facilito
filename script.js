@@ -57,9 +57,9 @@ function ModoOscuro() {
     }
   }
 
-/* ============================
-barra de navegacion desplegable 
-===============================*/
+/* ========================================
+barra de navegacion desplegable (celulares) 
+=========================================*/
 
   function toggleMenu() {
     var menu = document.getElementById("nav--menuDesplegable");
@@ -69,3 +69,20 @@ barra de navegacion desplegable
       menu.style.display = "block";
     }
   }
+
+/* ========================================
+Formulario - Cantidad de Niveles del Torneo
+=========================================*/
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var checkboxNiveles = document.getElementById('checkboxNiveles');
+    var divCantidadNiveles = document.getElementById('div--cantidadNiveles');
+  
+    checkboxNiveles.addEventListener('change', function() {
+      if (this.checked && this.value === 'si') {
+        divCantidadNiveles.style.display = 'block'; // Muestra el campo "Cuantos Niveles"
+      } else {
+        divCantidadNiveles.style.display = 'none'; // Oculta el campo "Cuantos Niveles"
+      }
+    });
+  });

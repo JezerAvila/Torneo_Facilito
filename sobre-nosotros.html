@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="barra-navegacion">
+        <ul>
+          <li>
+            <a href="index.html" class="es">Torneo Facilito</a>
+            <a href="index.html" class="en">Easy Tournament</a>
+          </li>
+          <li>
+            <a href="index.html" class="es">Inicio</a>
+            <a href="index.html" class="en">Home</a>
+          </li>
+          <li>
+            <a href="#" class="es">Crear sesión</a>
+            <a href="#" class="en">Sign in</a>
+          </li>
+          <li>
+            <a href="#" class="es">Iniciar sesión</a>
+            <a href="#" class="en">Log in</a>
+          </li>
+          <li>
+            <label class="switch" for="switchModo">
+              <input type="checkbox" id="switchModo" onchange="ModoOscuro()">
+              <span class="slider"></span>
+            </label>
+          </li>
+          <li>
+            <button onclick="CambiarIdioma()" id="boton-lenguaje" class="modo-claro"><img class="imagenIconoLenguaje" src="images/icono-lenguaje-claro.png" alt="boton de lenguaje"></button>
+          </li>
+        </ul>
+    
+    </nav>
+    
+            <div class="div--menuDesplegable" onclick="toggleMenu()">
+              <img src="images/icono-menu.png" alt="Menú">
+            </div>
+            
+            <nav id="nav--menuDesplegable" class="nav--menuDesplegable">
+              <ul class="ul--menuDesplegable">
+                <li><a href="formuilario.html" class="es">Torneo Facilito</a></li>
+                <li><a href="formuilario.html" class="en">Easy Tournament</a></li>
+                <li><a href="index.html" class="es">Inicio</a></li>
+                <li><a href="index.html" class="en">Home</a></li>
+                <li><a href="#" class="es">Sobre nosotros</a></li>
+                <li><a href="#" class="en">About us</a></li>
+                <li><a href="#" class="es">Crear sesión</a></li>
+                <li><a href="#" class="en">Sign in</a></li>
+                <li><a href="#" class="es">Iniciar sesión</a></li>
+                <li><a href="#" class="en">Log in</a></li>
+              </ul>
+            </nav>
+
+    <div>
+        <img src="images/foto-autor.jpeg" alt="foto del autor">
+        <p>“It’s not whether you win or lose, but having fun, so grab your favorite game, gather your friends, and have fun".
+            <br>-Jezer Avila, Founder
+        </p>
+        <p>"No se trata de ganar o perder, sino de divertirse, así que elige tu juego favorito, reúne a tus amigos y diviértete".
+            <br>-Jezer Avila, Fundador
+        </p>
+    </div>
+</body>
+</html>
