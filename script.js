@@ -74,15 +74,79 @@ barra de navegacion desplegable (celulares)
 Formulario - Cantidad de Niveles del Torneo
 =========================================*/
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var checkboxNiveles = document.getElementById('checkboxNiveles');
-    var divCantidadNiveles = document.getElementById('div--cantidadNiveles');
+document.addEventListener('DOMContentLoaded', function() {
+  var checkboxesNiveles = document.getElementsByName('checkboxNiveles');
+  var divCantidadNiveles = document.getElementById('div--cantidadNiveles');
+
+  for (var i = 0; i < checkboxesNiveles.length; i++) {
+      checkboxesNiveles[i].addEventListener('change', function() {
+          if (this.value === 'si' && this.checked) {
+              divCantidadNiveles.style.display = 'block'; // Muestra el campo "Cuantos Niveles"
+          } else {
+              divCantidadNiveles.style.display = 'none'; // Oculta el campo "Cuantos Niveles"
+          }
+      });
+  }
+});
+
+
+
+/* ================================
+Para nombrar los Niveles del Torneo
+==================================*/
+
+
+function mostrarCamposNiveles() {
+  var checkboxNiveles = document.getElementById('checkboxNiveles');
+  var divCantidadNiveles = document.getElementById('div--cantidadNiveles');
+  var contenedorNiveles = document.getElementById('contenedorNiveles');
   
-    checkboxNiveles.addEventListener('change', function() {
-      if (this.checked && this.value === 'si') {
-        divCantidadNiveles.style.display = 'block'; // Muestra el campo "Cuantos Niveles"
-      } else {
-        divCantidadNiveles.style.display = 'none'; // Oculta el campo "Cuantos Niveles"
+  // Mostrar u ocultar la pregunta de cuántos niveles según la respuesta
+  divCantidadNiveles.style.display = checkboxNiveles.checked ? 'block' : 'none';
+  
+  // Limpiar el contenedor de niveles por si ya se han agregado campos anteriores
+  contenedorNiveles.innerHTML = '';
+  
+  // Si la respuesta es "Sí" y se selecciona una cantidad válida de niveles, mostrar los campos de nombre de niveles
+  if (checkboxNiveles.checked) {
+      var cantidadNiveles = parseInt(document.getElementById('select--cantidadNiveles').value);
+      for (var i = 1; i <= cantidadNiveles; i++) {
+          var div = document.createElement('div');
+          div.innerHTML = `
+              <label for="nombreNivel${i}">Nombre del Nivel ${i}:</label>
+              <input type="text" id="nombreNivel${i}" name="nombreNivel${i}">
+          `;
+          contenedorNiveles.appendChild(div);
       }
-    });
-  });
+  }
+}
+
+  /* ===============================================
+Para registro de participantes en base a cuantos son
+==================================================*/
+function mostrarCamposParticipantes() {
+  // Obtener el valor del campo que registra cuántos participantes son
+  const cantidadParticipantes = parseInt(document.getElementById("input--cantidadParticipantes").value);
+
+  // Obtener el contenedor donde se agregarán los nuevos campos de entrada
+  const contenedorParticipantes = document.getElementById("contenedorParticipantes");
+
+  // Limpiar el contenedor por si ya se han agregado campos anteriores
+  contenedorParticipantes.innerHTML = '';
+
+  // Si la cantidad de participantes es válida, agregar los campos de entrada
+  if (!isNaN(cantidadParticipantes) && cantidadParticipantes > 0) {
+      for (let i = 1; i <= cantidadParticipantes; i++) {
+          // Crear nuevos elementos de input para el nombre y el correo de cada participante
+          const div = document.createElement("div");
+          div.innerHTML = `
+              <label for="nombreParticipante${i}">Nombre del Participante ${i}:</label>
+              <input type="text" id="nombreParticipante${i}" name="nombreParticipante${i}">
+              <label for="emailParticipante${i}">Correo electrónico del Participante ${i}:</label>
+              <input type="email" id="emailParticipante${i}" name="emailParticipante${i}">
+          `;
+          // Agregar los nuevos elementos al contenedor
+          contenedorParticipantes.appendChild(div);
+      }
+  }
+}

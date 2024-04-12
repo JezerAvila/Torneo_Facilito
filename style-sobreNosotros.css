@@ -1,0 +1,27 @@
+.div--fotoAutor{
+    display: flex;  
+    background-image: url(images/sobre-nosotros-torneo.jpg); 
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Para evitar que la imagen se repita */ 
+}
+
+.div--fotoAutor img {
+    width: 20%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    margin: 30px
+}
+
+.div--dialogoAutor p {
+    margin-top: 70px;
+    background-color: #fff; /* Color de fondo del cuadro de diálogo */
+    border: 2px solid #000; /* Grosor y color del borde del cuadro de diálogo */
+    padding: 10px; /* Espaciado interno dentro del cuadro de diálogo */
+    max-width: 300px; /* Ancho máximo del cuadro de diálogo */
+    position: relative; /* Para posicionar el puntero */
+}
+
+
+
+

@@ -1,0 +1,31 @@
+a:focus {
+    border: 3px solid blue;
+}
+nav, main {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+nav {
+    background-color: pink;
+}
+main {
+    background-color: hotpink;
+}
+.cloak {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* cuando tiene foco reseteamos las propiedades */
+.cloak:focus {
+    width: auto;
+    height: auto;
+    clip: unset;
+    background-color: yellow;
+}
