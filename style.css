@@ -271,4 +271,13 @@ body.mode-oscuro .a--inicioRapido {
     color: #ffffff; /* Cambiar el color del texto en modo oscuro */
   }
   
-  
+  /* ==============================
+===========FORMLARIO HTML==========
+============================== */
+
+.form--miFormulario div{
+  margin-bottom: 10px;
+}
+
+
+

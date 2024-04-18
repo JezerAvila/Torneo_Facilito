@@ -8,6 +8,9 @@ function ModoOscuro() {
     var animacionLogoRuta = document.getElementById("animacionLogoRuta");
     var animacionGamingRuta = document.getElementById("animacionGamingRuta");
 
+    // Guardar el estado del modo oscuro en el almacenamiento local
+    localStorage.setItem("modoOscuroActivado", switchModo.checked);
+
     if (switchModo.checked) {
         body.classList.add("mode-oscuro");
         animacionLogoRuta.src = "animaciones/TorneObscuro.mp4";
@@ -28,6 +31,16 @@ function ModoOscuro() {
     animacionGaming.load(); // Cargar el nuevo video
     animacionGaming.play(); // Reproducir el nuevo video
 }
+
+// Al cargar la página, verificar y aplicar el modo oscuro si está activado en el almacenamiento local
+document.addEventListener("DOMContentLoaded", function() {
+  var modoOscuroActivado = localStorage.getItem("modoOscuroActivado");
+  var switchModo = document.getElementById("switchModo");
+  if (modoOscuroActivado === "true") {
+      switchModo.checked = true;
+      ModoOscuro();
+  }
+});
 
   /* ============================
         cambio de idioma 
